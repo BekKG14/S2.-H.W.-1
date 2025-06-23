@@ -19,10 +19,9 @@ public class App {
         Basket.addProduct(cucumber);
         Basket.addProduct(cucumber);
         Basket.printAllProducts();
-        Basket.getSize();
         Basket.checkProduct(pivo);
-        Basket.printTotalCost();
-        System.out.println(Basket.getProduct(3));
+//        Basket.printTotalCost();
+//        System.out.println(Basket.getProduct(3));
 
 
         System.out.println("Корзина 2");
@@ -38,5 +37,7 @@ public class App {
         ProductBasket Basket3 = new ProductBasket(3);
         Basket3.printAllProducts();
         Basket3.checkProduct(pivo);
+
     }
+
 }

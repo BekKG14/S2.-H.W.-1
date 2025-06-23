@@ -4,8 +4,7 @@ import org.skypro.skyshop.product.Product;
 
 public class ProductBasket {
     private Product[] products;
-    private static int size;
-
+    private int size;
 
     public ProductBasket(int capacity) {
         products = new Product[capacity];
@@ -25,20 +24,11 @@ public class ProductBasket {
         for (int i = 0; i < size; i++) {
             if (products[i] != null) {
                 amount = amount + products[i].getCost();
-            }else System.out.println("Корзина пуста");
+            } else {
+                System.out.println("Корзина пуста");
+            }
         }
-        return amount;
-    }
-
-    public void printTotalCost() {
-        System.out.println("Сумма: " + totalCost());
-    }
-
-    public Product getProduct(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Неверный индекс " + index);
-        }
-        return products[index];
+        return (int) amount;
     }
 
     public void printAllProducts() {
@@ -52,27 +42,32 @@ public class ProductBasket {
     }
 
     public boolean checkProduct(Product product) {
-        for (int i = 0; i <size; i++) {
-            if (products[i] != null) {
-                if (products[i].equals(product)) {
-                    System.out.println("Продукт: " + product + " есть в корзине");
-                    return true;
-                }
+        for (int i = 0; i < size; i++) {
+            if (products[i] != null && products[i].equals(product)) {
+                return true;
             }
         }
-        System.out.println("В корзине нет такого товара");
         return false;
     }
-
-
-    public void getSize() {
-        System.out.println(size);
-    }
-
     public void clearBasket() {
         for (int i = 0; i < size; i++) {
             products[i] = null;
         }
     }
+
+//    private Product getProduct(int index) {
+//        if (index < 0 || index >= size) {
+//            throw new IndexOutOfBoundsException("Неверный индекс " + index);
+//        }
+//        return products[index];
+//    }
+//    private void printTotalCost() {
+//        System.out.println("Сумма: " + totalCost());
+//    }
+//    private void getSize() {
+//        System.out.println(size);
+//    }
 }
+
+
 
