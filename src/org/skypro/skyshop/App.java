@@ -11,15 +11,15 @@ public class App {
 
         System.out.println(cucumber);
         System.out.println("Корзина 1");
-        ProductBasket Basket = new ProductBasket(4);
+        ProductBasket basket = new ProductBasket(4);
 
-        Basket.addProduct(pivo);
-        Basket.addProduct(pivo);
-        Basket.addProduct(vodka);
-        Basket.addProduct(cucumber);
-        Basket.addProduct(cucumber);
-        Basket.printAllProducts();
-        Basket.checkProduct(pivo);
+        basket.addProduct(pivo);
+        basket.addProduct(pivo);
+        basket.addProduct(vodka);
+        basket.addProduct(cucumber);
+        basket.addProduct(cucumber);
+        basket.printAllProducts();
+        basket.checkProduct(pivo);
 //        Basket.printTotalCost();
 //        System.out.println(Basket.getProduct(3));
 

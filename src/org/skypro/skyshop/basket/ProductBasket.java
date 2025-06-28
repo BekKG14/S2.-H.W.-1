@@ -24,11 +24,9 @@ public class ProductBasket {
         for (int i = 0; i < size; i++) {
             if (products[i] != null) {
                 amount = amount + products[i].getCost();
-            } else {
-                System.out.println("Корзина пуста");
             }
         }
-        return (int) amount;
+        return amount;
     }
 
     public void printAllProducts() {
