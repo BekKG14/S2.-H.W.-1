@@ -10,6 +10,7 @@ public class ProductBasket {
         products = new Product[capacity];
         size = 0;
     }
+    int i = 2;
 
     public void addProduct(Product product) {
         if (size < products.length) {
