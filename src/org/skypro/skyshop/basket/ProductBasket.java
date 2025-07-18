@@ -10,6 +10,7 @@ public class ProductBasket {
         products = new Product[capacity];
         size = 0;
     }
+    int i = 2;
 
     public void addProduct(Product product) {
         if (size < products.length) {
@@ -17,6 +18,16 @@ public class ProductBasket {
         } else {
             System.out.println("КОРЗИНА ПЕРЕПОЛНЕНА");
         }
+    }
+
+    public int isSpecialCount() {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (products[i].isSpecial() == true) {
+                count = count + 1;
+            }
+        }
+        return count;
     }
 
     public double totalCost() {
@@ -47,24 +58,21 @@ public class ProductBasket {
         }
         return false;
     }
+
     public void clearBasket() {
         for (int i = 0; i < size; i++) {
             products[i] = null;
         }
     }
 
-//    private Product getProduct(int index) {
-//        if (index < 0 || index >= size) {
-//            throw new IndexOutOfBoundsException("Неверный индекс " + index);
-//        }
-//        return products[index];
-//    }
-//    private void printTotalCost() {
-//        System.out.println("Сумма: " + totalCost());
-//    }
-//    private void getSize() {
-//        System.out.println(size);
-//    }
+    public Product getProduct(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Неверный индекс " + index);
+        }
+        System.out.println(products[index]);
+        return products[index];
+
+    }
 }
 
 
